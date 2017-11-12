@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace isikukoodi_arvutus // Tähtaeg! 12.11.17
+namespace isikukoodi_arvutus // Programm kontrollib kasutaja sisestatud isikukood ning väljastab soo ja sünniaasta. Tähtaeg! 12.11.17
 {
     class MainClass
     {
