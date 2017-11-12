@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace isikukoodi_arvutus // Tähtaeg! 12.11.17
+{
+    class MainClass
+    {
+
+        static void Main(string[] args)
+        {
+
+            START:
+                // booleaniga jääb ta igavesti loopima for some reason
+            Console.WriteLine("Sisesta oma isikukood: ");
+
+            string input = Console.ReadLine();
+            Int64 isikuKood = Int64.Parse(input);               
+                // Peab kasutama int64 sest 32biti sisse ei mahu ja kräshib
+            var pikkus = isikuKood.ToString().Length;
+                // Kuidagi saab ka vast array pikkuse kaudu?
+            int[] iKood = isikuKood.ToString().ToCharArray().Select(x => (int)Char.GetNumericValue(x)).ToArray();
+
+                //  sain siit https://www.physicsforums.com/threads/converting-integer-into-array-of-single-digits-in-c.558588/
+
+
+            if (pikkus != 11)
+            {
+                Console.WriteLine("viga isikukoodis, proovi uuesti");
+                goto START;
+            }
+
+
+            if (iKood[0] == 3)
+            {
+                
+                Console.WriteLine("Olete " + "19" + iKood[1] + iKood[2] + " aastal sündinud mees"); 
+                // Kuidagi saab array seest lihtsamalt ka juppe kutsuda
+
+            }
+
+                // ja nüüd retsilt kopipastama sest math is hard
+
+            if (iKood[0] == 4)
+            {
+
+                Console.WriteLine("Olete " + "19" + iKood[1] + iKood[2] + " aastal sündinud naine"); 
+            }
+
+            if (iKood[0] == 5)
+            {
+
+                Console.WriteLine("Olete " + "20" + iKood[1] + iKood[2] + " aastal sündinud mees");
+
+            }
+
+
+            if (iKood[0] == 6)
+            {
+
+                Console.WriteLine("Olete " + "20" + iKood[1] + iKood[2] + " aastal sündinud naine");
+
+            }
+
+            if (iKood[0] == 1 || iKood[0] == 2)
+            {
+                Console.WriteLine("Olete juba jalaga hauas");
+
+            }
+
+
+            else goto START;
+
+                // Edasi tahaks teha mingi jupi kus ta oskaks kuu ja päeva ka välja lugeda
+        
+        }
+
+}
+};
+
