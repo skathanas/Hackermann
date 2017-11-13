@@ -1,0 +1,38 @@
+
+namespace Allahindlus
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Ütle mulle mis on elu hind: ");
+            string input = Console.ReadLine();
+            int hind = int.Parse(input);
+
+            if (hind <= 50) 
+            {
+                int diil1 = hind * 10 / 100;
+                int diil2 = hind * 20 / 100;
+                int tehe1 = hind - diil1;
+                int tehe2 = hind - diil2;
+                Console.WriteLine("Lihtsurelikule on ta -10% ehk" + tehe1 + " euri, kuid püsikliendi soodukaga -20% " + tehe2 + " euri.");
+            }
+            if (hind >= 250 && hind <= 350)
+            {
+                int diil1 = hind * 20 / 100;
+                int diil2 = hind * 30 / 100;
+                int tehe1 = hind - diil1;
+                int tehe2 = hind - diil2;
+                Console.WriteLine("Lihtsurelikule on ta -20% ehk " + tehe1 + " euri, kuid püsikliendi soodukaga -30% " + tehe2 + " euri.");
+            }
+            if (hind >= 350)
+            {
+                int diil1 = hind * 30 / 100;
+                int diil2 = hind * 40 / 100;
+                int tehe1 = hind - diil1;
+                int tehe2 = hind - diil2;
+                Console.WriteLine("Lihtsurelikule on ta -30% ehk " + tehe1 + " euri, kuid püsikliendi soodukaga -40% " + tehe2 + " euri.");
+            }
+        }
+    }
+}
