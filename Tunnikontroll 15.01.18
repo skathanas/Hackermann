@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tunnikontroll_vol2
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            {
+                string[] arr = new string[5];
+                int i;
+
+                Console.Write("\n\nTere tulemast terminal Mapsi:\n");
+                Console.Write("-----------------------------------------\n");
+
+                Console.Write("Kirjuta viis oma lemmik linna:\n");
+                Console.Write("Kirjuta 'ok' et jätkata.\n");
+                string input = Console.ReadLine();
+
+                if (input != "ok") 
+                {
+                    Environment.Exit(0);
+
+                }
+
+                else
+                {
+                    for (i = 0; i < 5; i++)
+
+
+                    {
+                        Console.Write("Linna nimi: ", i);
+                        arr[i] = Console.ReadLine();
+
+                        if (arr[i] == "Ivo")
+                        {
+                            Console.WriteLine("(Parem Georg Otsas kui Paul Keres. Hö-hö-hö)");
+                        }
+
+                    }
+
+                    Console.Write("\nLemmik Linnad: ");
+                    for (i = 0; i < 5; i++)
+                    {
+                        Console.Write("{0}  ", arr[i]);
+                    }
+                    Console.Write("\n");
+                }
+            }
+        }
+    }
+}
